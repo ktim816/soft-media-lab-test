@@ -1,0 +1,51 @@
+@import 'styles/utils';
+
+$switchWidth: 50px;
+$switchHeight: $switchWidth / 1.8;
+$buttonSize: $switchWidth / 2;
+
+.switch {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+
+  $this: &;
+
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    width: $switchWidth;
+    height: $switchHeight;
+    background-color: color('light-gray');
+    border-radius: $switchWidth;
+    position: relative;
+    transition: background-color $ease-main;
+
+    &--active {
+      background-color: color('secondary');
+    }
+
+    #{$this}__button {
+      content: '';
+      position: absolute;
+      left: 2px;
+      width: $buttonSize;
+      height: calc(100% - 4px);
+      border-radius: $buttonSize;
+      transition: $ease-main;
+      background-color: color('light');
+      box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+    }
+  }
+
+  &__checkbox {
+    display: none;
+
+    &--active + #{$this}__label #{$this}__button {
+      left: calc(100% - 2px);
+      transform: translateX(-100%);
+    }
+  }
+}

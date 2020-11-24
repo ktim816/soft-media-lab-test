@@ -1,0 +1,46 @@
+@import 'styles/utils';
+
+.radio {
+  position: relative;
+  margin: 15px 0;
+  display: flex;
+  user-select: none;
+  cursor: pointer;
+
+  $this: &;
+
+  &__text {
+    position: relative;
+  }
+
+  &__info {
+    position: absolute;
+    top: -2px;
+    right: -30px;
+  }
+
+  &__hidden {
+    display: none;
+    &:checked + #{$this}__inner {
+      transform: scale(1);
+    }
+  }
+
+  &__outer {
+    @include size(18px);
+    border: 1px solid color('black');
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 12px;
+  }
+
+  &__inner {
+    @include size(8px);
+    border-radius: 50%;
+    transform: scale(0);
+    background-color: color('black');
+    transition: transform $ease-main;
+  }
+}

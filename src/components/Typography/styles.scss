@@ -1,0 +1,28 @@
+@import 'styles/utils';
+
+.text {
+  font-weight: 400;
+  transition: color $ease-main;
+
+  $this: &;
+
+  &--bold {
+    font-weight: 600;
+  }
+
+  &--color-black {
+    color: color('black');
+  }
+
+  &--color-gray {
+    color: color('gray');
+  }
+
+  &--size-sm {
+    font-size: font-size('sm');
+  }
+
+  &--size-md {
+    font-size: font-size('md');
+  }
+}

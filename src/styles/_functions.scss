@@ -1,0 +1,7 @@
+@function color($color) {
+  @return map-get($colors, $color);
+}
+
+@function font-size($font-size) {
+  @return map-get($font-sizes, $font-size);
+}

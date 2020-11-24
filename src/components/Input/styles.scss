@@ -1,0 +1,22 @@
+@import 'styles/utils';
+
+.input {
+  display: flex;
+  align-items: center;
+
+  $this: &;
+
+  &__field {
+    width: auto;
+    padding: 7px 10px;
+    background-color: transparent;
+    border: 1px solid color('gray');
+    border-radius: 25px;
+    font-weight: 600;
+    outline: none;
+  }
+
+  &__text {
+    margin-left: 10px;
+  }
+}

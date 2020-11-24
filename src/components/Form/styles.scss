@@ -1,0 +1,8 @@
+@import 'styles/utils';
+
+.form-group {
+  $this: &;
+  &:not(:first-child) {
+    margin-top: 30px;
+  }
+}

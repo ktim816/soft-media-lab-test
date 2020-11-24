@@ -1,0 +1,24 @@
+@import 'styles/utils';
+
+.icon-button {
+  background-color: transparent;
+  position: relative;
+  @include size(20px);
+  border-radius: 50%;
+  font-size: 80%;
+  border: 1px solid color('gray');
+  transition: border-color $ease-main;
+  outline: none;
+  cursor: pointer;
+
+  $this: &;
+
+  &:hover {
+    border-color: color('dark-gray');
+  }
+
+  svg {
+    @include size(80%);
+    @include center-block();
+  }
+}
